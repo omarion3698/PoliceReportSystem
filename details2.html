@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POLICE REPORT FORM</title>
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- normalize css -->
+    <link rel = "stylesheet" href = "css/normalize.css">
+    <!-- custom css -->
+    <link rel = "stylesheet" href = "css/form.css">
+	<script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+	<link rel="icon" href="images2/logo3.ico" type="image/x-icon">
+</head>
+<body>
+	<py-env>  
+		- pickle
+		- sklearn
+	</py-env>
+<link rel = "stylesheet" href="css/main.css">
+<div class="container">  
+	<form class="contact" action="#" method="post" onsubmit="return submitForm()">
+		<h3 style="text-align: center; font-weight: bold; color: #fecd00;">POLICE REPORT FORM</h3><br>
+			
+		<b style="color: #fecd00;">CRIMINAL INFO </b><br>
+		<div class="col50 colleft">
+			<div class="wd50" style="height: 50px;">
+				<label for="Full-Name">Summary</label>
+				<input placeholder="Write a summary of the accident here:" type="text" id="FullName" required style="width: 100%; height: 200%; padding: 1%;" autofocus>
+			</div>
+		</div>
+		<div class="col50 colright">
+			<div class="wd50" style="height: 50px;">
+				<label for="Gender">Actions Taken</label>
+				<input placeholder="Write a summary of the actions taken here:" type="text" id="Gender" required style="width: 100%; height: 200%; padding: 1%;" autofocus>
+			</div>
+		</div>
+		
+			
+			<br><br><br><br><br><br>
+			<div class="file-upload">
+				Upload files that will act as evidence. File formats include: png, jpeg, jpg, mp3, mp4
+				<label for="fileInput" class="custom-file-upload">
+					Choose a File
+				</label>
+				<input type="file" id="fileInput" accept=".pdf, .doc, .docx, .txt">
+			</div>
+			
+
+			<div class="wd100"><hr></div>
+			<b style="color: #fecd00;">OTHER INFORMATION (Optional):</b><br>
+			<div class="col50 colleft">
+				<div class="wd100">
+					<label name="Pains">Full Names</label><br>
+					<input placeholder="Full Names of the witness" type="text" id="Names" required style="width: 100%; height: 200%; padding: 1%;" autofocus>
+
+				</div>
+				<div class="wd100">
+					<label name="Nasal-Congestion">ID number</label><br>
+					<input placeholder="ID No. of the witness" type="number" id="Names" required style="width: 100%; height: 200%; padding: 1%;" autofocus>
+
+				</div>
+				<div class="wd100" >
+					<label for="Runny-Nose">Phone Number</label><br>
+					<input placeholder="Phone Number of the witness" type="number" id="Names" required style="width: 100%; height: 200%; padding: 1%;" autofocus>
+
+				</div>
+				
+			</div>
+
+			<div class="col50 colright">
+				<div class="wd100">
+                    <label name="Diarrhea">Age</label><br>
+					<input placeholder="Age of the witness" type="number" id="Names" required style="width: 100%; height: 200%; padding: 1%;" autofocus>
+
+				</div>
+				<div class="wd100">
+					<label name="Severity">Witness' Statement</label><br>
+					<input placeholder="Write a statement of the witness" type="text" id="Names" required style="width: 100%; height: 200%; padding: 1%;" autofocus>
+			
+                </div>
+				<div class="wd100">
+					<label name="Runny-Nose">Address</label><br>
+					<input placeholder="Address of the witness" type="text" id="Names" required style="width: 100%; height: 200%; padding: 1%;" autofocus>
+
+                </div>
+			</div>
+			<div class="wd100"><hr></div>
+			<div class="wd100" style="text-align: right;">
+				<button type="reset" class="btn btn-primary" onclick="window.location.href = 'form1.html';" style="background-color: #003399; height: 50px; width: 120px; text-align: center;">Back</button>
+				<button type="submit" class="btn btn-primary" onclick="showAlert()" style="height: 50px; width: 120px; text-align: center;">Submit</button>
+			</div>
+	</form>
+</div>
+
+    <p id='output'></p>
+	<script>
+		function showAlert() {
+			alert("Your form has been submitted successfully!");
+		}
+	</script>
+    <script>
+        function submitForm() {
+            // Get the values of the "Gender" and "Full Name" fields
+            var gender = document.getElementById("Gender").value;
+            var fullName = document.getElementById("Full-Name").value;
+
+            // Check if either of the fields is empty
+            if (gender.trim() === '' || fullName.trim() === '') {
+                alert("Please fill in the Gender and Full Name fields before submitting.");
+                return false; // Prevent form submission
+            }
+
+            // If both fields are filled, the form will submit
+            return true;
+		}
+    </script>
+</body>
+</html>
